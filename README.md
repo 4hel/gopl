@@ -22,3 +22,5 @@ l_fetch              | curl with a few lines
 m_exercise-1.7       | fetch using io.Copy to stdout
 n_exercise-1.7b      | fetch auto adding http prefix to url
 o_exercise-1.9       | fetch printing http status code additionaly
+p_fetchall           | fetch in parallel with goroutines
+q_exercise-1.10      | fetchall with writing contents to files
