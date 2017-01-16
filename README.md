@@ -24,3 +24,6 @@ n_exercise-1.7b      | fetch auto adding http prefix to url
 o_exercise-1.9       | fetch printing http status code additionaly
 p_fetchall           | fetch in parallel with goroutines
 q_exercise-1.10      | fetchall with writing contents to files
+r_server1            | web server doing simple echo
+s_server2            | web server with request count wieth Mutex
+t_server3            | web server printing headers and other http infos
