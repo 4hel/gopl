@@ -28,3 +28,11 @@ r_server1            | web server doing simple echo
 s_server2            | web server with request count wieth Mutex
 t_server3            | web server printing headers and other http infos
 u_server-gif         | web server sending GIF from k\_lissajous
+
+
+## 2. Program Structure
+
+Program              | Purpose
+---                  | ---
+a_retpointer         | returning a pointer to local var (escape analysis)
+b_echo4              | echo with flag.Parse()
