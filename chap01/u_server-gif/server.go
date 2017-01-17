@@ -2,6 +2,7 @@
 package main
 
 import (
+	"fmt"
 	"image"
 	"image/color"
 	"image/gif"
@@ -10,6 +11,7 @@ import (
 	"math"
 	"math/rand"
 	"net/http"
+	"strconv"
 )
 
 var palette = []color.Color{color.White, color.Black}
@@ -26,12 +28,24 @@ func main() {
 
 // handler echoes the Path component of the requested URL
 func handler(w http.ResponseWriter, r *http.Request) {
-	lissajous(w)
+	if err := r.ParseForm(); err != nil {
+		log.Print(err)
+	}
+	if len(r.Form["cycles"]) == 0 {
+		fmt.Fprintf(w, "error: no cycles parameter")
+		return
+	}
+	var cyclesString string = r.Form["cycles"][0]
+	cycles, err := strconv.Atoi(cyclesString)
+	if err != nil {
+		fmt.Fprintf(w, "error parsing cycles: %v", err)
+		return
+	}
+	lissajous(w, float64(cycles))
 }
 
-func lissajous(out io.Writer) {
+func lissajous(out io.Writer, cycles float64) {
 	const (
-		cycles  = 5     // number of complete x oscillator revolutions
 		res     = 0.001 // angular resolution
 		size    = 100   // image canvas covers [-size..+size]
 		nframes = 64    // number of animations
