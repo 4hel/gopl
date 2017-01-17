@@ -27,3 +27,4 @@ q_exercise-1.10      | fetchall with writing contents to files
 r_server1            | web server doing simple echo
 s_server2            | web server with request count wieth Mutex
 t_server3            | web server printing headers and other http infos
+u_server-gif         | web server sending GIF from k\_lissajous
