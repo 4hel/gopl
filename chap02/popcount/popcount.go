@@ -40,3 +40,13 @@ func PopCountShift1(x uint64) int {
 	}
 	return int(retval)
 }
+
+// Exercise 2.5
+func PopCountClear1(x uint64) int {
+	retval := 0
+	for x > 0 {
+		x = x & (x - 1)
+		retval++
+	}
+	return retval
+}
