@@ -21,3 +21,12 @@ func PopCount(x uint64) int {
 		pc[byte(x>>(6*8))] +
 		pc[byte(x>>(7*8))])
 }
+
+// Exercise 2.3
+func PopCountLoop(x uint64) int {
+	var retval byte
+	for i := uint64(0); i < 8; i++ {
+		retval += pc[byte(x>>(i*8))]
+	}
+	return int(retval)
+}
