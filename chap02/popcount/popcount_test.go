@@ -16,12 +16,13 @@ func TestPopCount(t *testing.T) {
 	}
 
 	// 0x05 -> 2 bits set
-	result = PopCount(0x0500)
-	if result != 2 {
-		t.Errorf("expected 2 bits set for 0x0500 but got %d", result)
+	result = PopCount(0xffef)
+	if result != 15 {
+		t.Errorf("expected 15 bits set for 0x0500 but got %d", result)
 	} else {
 		t.Log("2 bits set for 0x0500")
 	}
+
 }
 
 func BenchmarkPopCount(b *testing.B) {
