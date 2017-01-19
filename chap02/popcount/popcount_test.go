@@ -7,7 +7,6 @@ import (
 func TestPopCount(t *testing.T) {
 	t.Log("testing PopCount function...")
 
-	// 0x01 -> 1 bit set
 	result := PopCount(1)
 	if result != 1 {
 		t.Errorf("expected 1 bit set for (int 1) but got %d", result)
@@ -15,12 +14,11 @@ func TestPopCount(t *testing.T) {
 		t.Log("1 bit set for (int 1)")
 	}
 
-	// 0x05 -> 2 bits set
 	result = PopCount(0xffef)
 	if result != 15 {
-		t.Errorf("expected 15 bits set for 0x0500 but got %d", result)
+		t.Errorf("expected 15 bits set for 0xffef but got %d", result)
 	} else {
-		t.Log("2 bits set for 0x0500")
+		t.Log("15 bits set for 0xffef")
 	}
 
 }
@@ -28,7 +26,6 @@ func TestPopCount(t *testing.T) {
 func TestPopCountLoop(t *testing.T) {
 	t.Log("testing PopCountLoop function...")
 
-	// 0x01 -> 1 bit set
 	result := PopCountLoop(1)
 	if result != 1 {
 		t.Errorf("expected 1 bit set for (int 1) but got %d", result)
@@ -36,14 +33,30 @@ func TestPopCountLoop(t *testing.T) {
 		t.Log("1 bit set for (int 1)")
 	}
 
-	// 0x05 -> 2 bits set
 	result = PopCountLoop(0xffef)
 	if result != 15 {
-		t.Errorf("expected 15 bits set for 0x0500 but got %d", result)
+		t.Errorf("expected 15 bits set for 0xffef but got %d", result)
 	} else {
-		t.Log("2 bits set for 0x0500")
+		t.Log("15 bits set for 0xffef")
+	}
+}
+
+func TestPopCountShift1(t *testing.T) {
+	t.Log("testing PopCountShift1 function...")
+
+	result := PopCountShift1(1)
+	if result != 1 {
+		t.Errorf("expected 1 bit set for (int 1) but got %d", result)
+	} else {
+		t.Log("1 bit set for (int 1)")
 	}
 
+	result = PopCountShift1(0xffef)
+	if result != 15 {
+		t.Errorf("expected 15 bits set for 0xffef but got %d", result)
+	} else {
+		t.Log("15 bits set for 0xffef")
+	}
 }
 
 func BenchmarkPopCount(b *testing.B) {
@@ -55,5 +68,11 @@ func BenchmarkPopCount(b *testing.B) {
 func BenchmarkPopCountLoop(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		PopCountLoop(uint64(i))
+	}
+}
+
+func BenchmarkPopCountShift1(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		PopCountShift1(uint64(i))
 	}
 }

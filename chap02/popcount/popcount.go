@@ -30,3 +30,13 @@ func PopCountLoop(x uint64) int {
 	}
 	return int(retval)
 }
+
+// Exercise 2.4
+func PopCountShift1(x uint64) int {
+	var retval uint64
+	for i := uint64(0); i < 64; i++ {
+		shitedVal := x >> i
+		retval += shitedVal & 1
+	}
+	return int(retval)
+}
