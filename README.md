@@ -47,3 +47,5 @@ tempconv             | celsius fahrenheit type conversion package
 Program              | Purpose
 ---                  | ---
 a_surface            | creating a SVG graphic with float calculations
+b_exercise-3.3       | adding color gradient from red to blue
+c_surfserver         | serving svg via http server
