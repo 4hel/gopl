@@ -36,3 +36,14 @@ Program              | Purpose
 ---                  | ---
 a_retpointer         | returning a pointer to local var (escape analysis)
 b_echo4              | echo with flag.Parse()
+c_cf                 | celsius fahrenheit type conversion using package tempconv
+d_bitlevel           | shift and mask on binary numbers
+popcount             | counting number of bits set to 1 in a word
+tempconv             | celsius fahrenheit type conversion package
+
+
+## 3. Basic Data Types
+
+Program              | Purpose
+---                  | ---
+a_surface            | creating a SVG graphic with float calculations
