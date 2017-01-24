@@ -49,3 +49,12 @@ Program              | Purpose
 a_surface            | creating a SVG graphic with float calculations
 b_exercise-3.3       | adding color gradient from red to blue
 c_surfserver         | serving svg via http server
+
+
+## 4. Composite Types
+
+Program              | Purpose
+---                  | ---
+a_sha256             | printf sha256 sums of type [32]byte with %x
+b_exercise-4.1       | counting the bits set diffently in two sha256 sums
+c_exercise-4.2       | reading all STDIN and printing the sha256 sum of it
