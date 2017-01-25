@@ -63,3 +63,6 @@ e_exercise-4.3       | reverse array [6]int
 f_exercise-4.4       | left rotate a slice
 g_exercise-4.5       | remove adjacent duplicates from string slice
 h_exercise-4.6       | in place squash unicode spaces into ascii space
+i_charcount          | charcount NewReader(STDIN) ReadRune()
+j_charclass          | count character classes
+k_wordfreq           | count word frequencies with NewScanner / Split ScanWords
