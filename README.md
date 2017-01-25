@@ -58,3 +58,8 @@ Program              | Purpose
 a_sha256             | printf sha256 sums of type [32]byte with %x
 b_exercise-4.1       | counting the bits set diffently in two sha256 sums
 c_exercise-4.2       | reading all STDIN and printing the sha256 sum of it
+d_rev                | reverse a slice
+e_exercise-4.3       | reverse array [6]int
+f_exercise-4.4       | left rotate a slice
+g_exercise-4.5       | remove adjacent duplicates from string slice
+h_exercise-4.6       | in place squash unicode spaces into ascii space
