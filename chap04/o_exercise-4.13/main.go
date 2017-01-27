@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"io"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"net/url"
@@ -36,10 +36,6 @@ func main() {
 func downloadPoster(mov *Movie) (string, error) {
 	tokens := strings.Split(mov.Poster, ".")
 	fileName := mov.Title + "." + tokens[len(tokens)-1]
-	output, err := os.Create(fileName)
-	if err != nil {
-		return "", err
-	}
 	resp, err := http.Get(mov.Poster)
 	if err != nil {
 		return "", err
@@ -48,11 +44,13 @@ func downloadPoster(mov *Movie) (string, error) {
 		resp.Body.Close()
 		return "", fmt.Errorf("poster download failed: %s", resp.Status)
 	}
-	_, err = io.Copy(output, resp.Body)
+	bytes, err := ioutil.ReadAll(resp.Body)
+	resp.Body.Close()
 	if err != nil {
 		return "", err
 	}
-	if err = output.Close(); err != nil {
+	err = ioutil.WriteFile(fileName, bytes, 0644)
+	if err != nil {
 		return "", err
 	}
 	return fileName, nil
