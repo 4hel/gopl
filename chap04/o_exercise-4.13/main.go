@@ -3,10 +3,12 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"net/url"
 	"os"
+	"strings"
 )
 
 type Movie struct {
@@ -20,11 +22,40 @@ func main() {
 	if len(os.Args) != 2 {
 		log.Fatal("one argument must be given for title")
 	}
-	result, err := getMovie(os.Args[1])
+	mov, err := getMovie(os.Args[1])
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(result.Poster)
+	fileName, err := downloadPoster(mov)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(fileName)
+}
+
+func downloadPoster(mov *Movie) (string, error) {
+	tokens := strings.Split(mov.Poster, ".")
+	fileName := mov.Title + "." + tokens[len(tokens)-1]
+	output, err := os.Create(fileName)
+	if err != nil {
+		return "", err
+	}
+	resp, err := http.Get(mov.Poster)
+	if err != nil {
+		return "", err
+	}
+	if resp.StatusCode != http.StatusOK {
+		resp.Body.Close()
+		return "", fmt.Errorf("poster download failed: %s", resp.Status)
+	}
+	_, err = io.Copy(output, resp.Body)
+	if err != nil {
+		return "", err
+	}
+	if err = output.Close(); err != nil {
+		return "", err
+	}
+	return fileName, nil
 }
 
 func getMovie(title string) (*Movie, error) {
