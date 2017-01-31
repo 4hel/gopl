@@ -1,4 +1,4 @@
-// Findlinks1 prints the links in an HTML document read from standard input.
+// parse html TextNodes and print to stdout
 package main
 
 import (
