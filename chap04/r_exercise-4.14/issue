@@ -1,0 +1,35 @@
+<h1>{{.Title}}</h1>
+<table>
+    <tr style='text-align: left'>
+        <th>Field</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>Number</td>
+        <td>{{.Number}}</td>
+    </tr>
+    <tr>    
+        <td>URL</td>
+        <td>{{.HTMLURL}}</td>
+    </tr>    
+    <tr>
+        <td>State</td>
+        <td>{{.State}}</td>
+    </tr>
+    <tr>    
+        <td>User</td>
+        <td>{{.User.Login}}</td>
+    </tr>    
+    <tr>
+        <td>Creation Date</td>
+        <td>{{.CreatedAt}}</td>    
+    </tr>
+</table>
+
+<p>
+    <b>body:</b>
+</p>
+    
+<p>
+    {{.Body}}
+</p>    

@@ -1,0 +1,17 @@
+<h1>{{.TotalCount}} issues</h1>
+<table>
+<tr style='text-align: left'>
+  <th>#</th>
+  <th>State</th>
+  <th>User</th>
+  <th>Title</th>
+</tr>
+{{range .Items}}
+<tr>
+  <td><a href='/issue?number={{.Number}}'>{{.Number}}</a></td>
+  <td>{{.State}}</td>
+  <td><a href='/user?name={{.User.Login}}'>{{.User.Login}}</a></td>
+  <td><a href='/issue?number={{.Number}}'>{{.Title}}</a></td>
+</tr>
+{{end}}
+</table>
