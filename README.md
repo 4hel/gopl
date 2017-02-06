@@ -66,3 +66,10 @@ h_exercise-4.6       | in place squash unicode spaces into ascii space
 i_charcount          | charcount NewReader(STDIN) ReadRune()
 j_charclass          | count character classes
 k_wordfreq           | count word frequencies with NewScanner / Split ScanWords
+l_github             | github json api client with structs
+m_issues             | command line issue search for github
+n_exercise-4.10      | classify github issues search results by age new or old
+o_exercise-4.13      | command line client for movie poster download
+p_issuesreport       | issue rendering with text template
+q_issueshtml         | issue rendering with html template
+r_exercise-4.14      | web server rendering html issue info
