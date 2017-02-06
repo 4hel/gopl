@@ -73,3 +73,14 @@ o_exercise-4.13      | command line client for movie poster download
 p_issuesreport       | issue rendering with text template
 q_issueshtml         | issue rendering with html template
 r_exercise-4.14      | web server rendering html issue info
+
+
+## 5. Functions
+
+Program              | Purpose
+---                  | ---
+a_findlinks          | parse html (stdin) and find links
+b_exercise-5.1       | findlinks without for loop
+c_exercise-5.2       | count types of element nodes in map
+d_exercise-5.3       | parse html TextNodes and print to stdout
+e_exercise-5.4       | findlinks1 + additionally find other links like images and scripts
