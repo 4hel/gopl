@@ -84,3 +84,7 @@ b_exercise-5.1       | findlinks without for loop
 c_exercise-5.2       | count types of element nodes in map
 d_exercise-5.3       | parse html TextNodes and print to stdout
 e_exercise-5.4       | findlinks1 + additionally find other links like images and scripts
+f_outline2           | print outline of a parsed html tree from url
+g_exercise-5.7       | pretty printing the parsed html
+h_exercise-5.8       | implemented getElementById on parsed html tree
+i_exercise-5.9       | expanding $foo with function argument
