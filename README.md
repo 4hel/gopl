@@ -88,3 +88,12 @@ f_outline2           | print outline of a parsed html tree from url
 g_exercise-5.7       | pretty printing the parsed html
 h_exercise-5.8       | implemented getElementById on parsed html tree
 i_exercise-5.9       | expanding $foo with function argument
+
+
+## 6. Methods
+
+Program              | Purpose
+---                  | ---
+a_intset             | set of small integers implemented as Bit Vector
+b_exercise-6.1       | added some methods
+c_exercise-6.2       | added variadic AddAll Method
