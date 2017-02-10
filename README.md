@@ -2,6 +2,9 @@
 
 Exercises from the book "The Go Programming Language"
 
+## Questions
+
+* X := 10 * time.Second
 
 ## 1. Tutorial
 
