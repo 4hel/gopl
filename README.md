@@ -100,3 +100,5 @@ Program              | Purpose
 a_intset             | set of small integers implemented as Bit Vector
 b_exercise-6.1       | added some methods
 c_exercise-6.2       | added variadic AddAll Method
+d_exercise-6.3       | added Intersect and Difference Methods
+e_exercise-6.4       | added Elems Method returning slice for range loop
