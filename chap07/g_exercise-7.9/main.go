@@ -31,17 +31,14 @@ func length(s string) time.Duration {
 	return d
 }
 
-type byYear []*Track
+type customSort struct {
+	t    []*Track
+	less func(x, y *Track) bool
+}
 
-func (x byYear) Len() int           { return len(x) }
-func (x byYear) Less(i, j int) bool { return x[i].Year < x[j].Year }
-func (x byYear) Swap(i, j int)      { x[i], x[j] = x[j], x[i] }
-
-type byArtist []*Track
-
-func (x byArtist) Len() int           { return len(x) }
-func (x byArtist) Less(i, j int) bool { return x[i].Artist < x[j].Artist }
-func (x byArtist) Swap(i, j int)      { x[i], x[j] = x[j], x[i] }
+func (x customSort) Len() int           { return len(x.t) }
+func (x customSort) Less(i, j int) bool { return x.less(x.t[i], x.t[j]) }
+func (x customSort) Swap(i, j int)      { x.t[i], x.t[j] = x.t[j], x.t[i] }
 
 var html = template.Must(template.ParseFiles("tracks.html"))
 
@@ -61,10 +58,26 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	if len(r.Form["sort"]) > 0 {
 		switch r.Form["sort"][0] {
 		case "year":
-			sorting = byYear(tracks)
+			sorting = customSort{tracks, func(x, y *Track) bool {
+				return x.Year < y.Year
+			}}
 
 		case "artist":
-			sorting = byArtist(tracks)
+			sorting = customSort{tracks, func(x, y *Track) bool {
+				return x.Artist < y.Artist
+			}}
+		case "title":
+			sorting = customSort{tracks, func(x, y *Track) bool {
+				return x.Title < y.Title
+			}}
+		case "album":
+			sorting = customSort{tracks, func(x, y *Track) bool {
+				return x.Album < y.Album
+			}}
+		case "length":
+			sorting = customSort{tracks, func(x, y *Track) bool {
+				return x.Length < y.Length
+			}}
 		}
 	}
 
