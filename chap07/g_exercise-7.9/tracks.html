@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <style>
+table {
+    padding: 0;
+    empty-cells: hide;
+}
+table tr {
+  border-top: 1px solid #cccccc;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+table tr th {
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+table tr td {
+  border: 1px solid #cccccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+table tr th :first-child,
+table tr td :first-child {
+  margin-top: 0;
+}
+table tr th :last-child,
+table tr td :last-child {
+  margin-bottom: 0;
+}
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th><a href="/?sort=artist">Artist</a></th>
+        <th>Album</th>
+        <th><a href="/?sort=year">Year</a></th>
+        <th>Length</th>
+      </tr>
+      {{range .}}
+      <tr>
+        <td>{{.Title}}</td>
+        <td>{{.Artist}}</td>
+        <td>{{.Album}}</td>
+        <td>{{.Year}}</td>
+        <td>{{.Length}}</td>
+      </tr>
+      {{end}}
+    </table>
+  </body>
+</html>
