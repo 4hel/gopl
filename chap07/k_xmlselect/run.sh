@@ -1,1 +1,1 @@
-cat index.html | go run main.go div div h2
+cat index | go run main.go div div h2
