@@ -102,3 +102,21 @@ b_exercise-6.1       | added some methods
 c_exercise-6.2       | added variadic AddAll Method
 d_exercise-6.3       | added Intersect and Difference Methods
 e_exercise-6.4       | added Elems Method returning slice for range loop
+
+
+## 7. Interfaces
+
+Program              | Purpose
+---                  | ---
+a_exercise-7.1       | LineCounter and WordCounter implementing the Writer interface 
+b_exercise-7.2       | CountingWriter returns a Wrapper to a given io.Writer + *counter
+c_exercise-7.3       | added String Method to tree type
+d_exercise-7.4       | reimplement strings.NewReader
+f_tempflag           | tempconv command line - celsiusFlag satisfies flag.Value interface
+g_exercise-7.9       | html table using sort.Interface
+h_exercise-7.11      | update func adapted to http.Handler interface using DefaultServeMux
+i_eval               | expression evaluator
+j_exercise-7.13      | add String method to Expr interface
+k_xmlselect          | print the text of xml elements selected py path 
+l_exercise-7.17      | xmlselect also by attributes
+m_exercise-7.18      | constructing a tree of generic nodes from xml tokens
