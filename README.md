@@ -120,3 +120,19 @@ j_exercise-7.13      | add String method to Expr interface
 k_xmlselect          | print the text of xml elements selected py path 
 l_exercise-7.17      | xmlselect also by attributes
 m_exercise-7.18      | constructing a tree of generic nodes from xml tokens
+
+
+## 8. Goroutines and Channels
+
+Program              | Purpose
+---                  | ---
+a_exercise-8.1       | clock server and clients with goroutines
+b_exercise-8.2       | FTP Server
+c_exercise-8.3       | netcat3 -> *net.TCPConn.CloseWrite()
+d_exercise-8.4       | using sync.WaitGroup to count the number of active echo goroutines
+e_exercise-8.8       | echoserver now has timeout using select statement 
+f_exercise-8.9       | du status updates now seperate for each root
+g_chatserver         | a server broadcasting chat messages to all tcp clients like netcat
+h_exercise-8.12      | announce set of clients to new arrivals 
+i_exercise-8.13      | added timeout to chat server
+j_exercise-8.14      | chat servers network protocol now asks for user name
