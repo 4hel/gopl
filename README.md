@@ -136,3 +136,12 @@ g_chatserver         | a server broadcasting chat messages to all tcp clients li
 h_exercise-8.12      | announce set of clients to new arrivals 
 i_exercise-8.13      | added timeout to chat server
 j_exercise-8.14      | chat servers network protocol now asks for user name
+
+
+## 9. Concurrency With Shared Variables
+
+Program              | Purpose
+---                  | ---
+a_exercise-9.1       | withdraw added to bank1
+b_exercise-9.5       | found limit of ~ 2.5 mio goroutines with 8GB Memory 
+c_exercise-9.6       | found limit of ~ 4.5 mio messages per second
